@@ -1,0 +1,27 @@
+{
+  "name": "ustospain",
+  "version": "1.0.0",
+  "description": "AI-Driven real estate platform\r A platform for real estate services in Spain, targeting Americans living in or moving to Spain. Features include property listings, AI assistance, WhatsApp integration, and informative content.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrJohnGor/ustospain.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrJohnGor/ustospain/issues"
+  },
+  "homepage": "https://github.com/mrJohnGor/ustospain#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.10.1"
+  }
+}
