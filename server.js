@@ -22,7 +22,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Test email on startup (still to vesnaproperty@gmail.com)
+// Test email on startup (to vesnaproperty@gmail.com)
 transporter.sendMail({
   from: 'vesnaproperty@gmail.com',
   to: 'vesnaproperty@gmail.com',
@@ -66,7 +66,7 @@ app.post('/api/chat', async (req, res) => {
     context.messages.push({ role: 'user', content: message });
 
     const response = await openai.chat.completions.create({
-      model: 'gmt-3.5-turbo',
+      model: 'gpt-3.5-turbo', // Fixed typo (was 'gmt-3.5-turbo')
       messages: context.messages,
     });
 
@@ -106,7 +106,7 @@ app.post('/api/chat', async (req, res) => {
       // Send email to agent with HTML formatting
       transporter.sendMail({
         from: 'vesnaproperty@gmail.com',
-        to: 'g7366880088@gmail.com', // Changed to agent email
+        to: 'g7366880088@gmail.com', // Agent email
         subject: 'New UStoSpain Client Request',
         text: `Client Name: ${task.userName}\nClient Email: ${task.userEmail}\nPreferences: ${JSON.stringify(task.preferences, null, 2)}`, // Plain-text fallback
         html: `
