@@ -66,7 +66,7 @@ app.post('/api/chat', async (req, res) => {
     context.messages.push({ role: 'user', content: message });
 
     const response = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo', // Fixed typo (was 'gmt-3.5-turbo')
+      model: 'gpt-3.5-turbo', // Correct model
       messages: context.messages,
     });
 
@@ -104,6 +104,7 @@ app.post('/api/chat', async (req, res) => {
       console.log('Task saved successfully:', task);
 
       // Send email to agent with HTML formatting
+      console.log('Attempting to send email to g7366880088@gmail.com...');
       transporter.sendMail({
         from: 'vesnaproperty@gmail.com',
         to: 'g7366880088@gmail.com', // Agent email
